@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', (event) =>{
     getVisitCount();
 })
 
-const functionApi = '';
+const functionApi = 'https://myazurecloudresume.azurewebsites.net/api/AzureCloudResume?code=kpqRJ6pw2dpLE3d0nVlLzAhSvcrlWoRO81rmGluvpy9TdJCNDXWQOQ==';
 
 const getVisitCount = () => {
     let count =30;
