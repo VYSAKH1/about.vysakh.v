@@ -1,12 +1,10 @@
-name: deploy_frontend
+name: Deploy frontend
 
-# Deploy when push made from frontend folder.
 on:
     push:
         branches: [ main ]
         paths:
-        - 'frontend/**'
-    
+         - 'frontend/**'
 
 jobs:
   build:
@@ -22,14 +20,14 @@ jobs:
       with:
         azcliversion: 2.0.72
         inlineScript: |
-            az storage blob upload-batch --account-name cloudresumesite -d '$web' -s frontend/
+            az storage blob upload-batch --account-name 'azurecloud999' -d '$web' -s frontend/
     - name: Purge CDN endpoint
       uses: azure/CLI@v1
       with:
         azcliversion: 2.0.72
         inlineScript: |
-          az cdn endpoint purge --content-paths "/*" --resource-group cloud-resume-challenge-rg --profile-name cloudresumechallengegps --name cloudresumechallengegps
-          
+           az cdn endpoint purge --content-paths  "/*" --profile-name "azurecloud" --name "azurecloudvysakh" --resource-group "CloudResumeChallengeRG"
+
   # Azure logout 
     - name: logout
       run: |
